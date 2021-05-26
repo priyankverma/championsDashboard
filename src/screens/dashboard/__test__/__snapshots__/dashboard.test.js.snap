@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard Component matches snapshot perfectly 1`] = `
+<div
+  className="sc-bdnxRM vtpak"
+  height={768}
+>
+  <div
+    className="sc-fujyAs ejTEhv"
+  >
+    <div
+      className="ant-select ant-select-auto-complete sc-hKFxyN jMSORU ant-select-single ant-select-customize-input ant-select-show-search"
+      data-testid="searchBar"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+    >
+      <div
+        className="ant-select-selector"
+        onClick={[Function]}
+        onMouseDown={[Function]}
+      >
+        <span
+          className="ant-select-selection-search"
+        >
+          <span
+            className="ant-input-group-wrapper ant-input-group-wrapper-lg ant-input-search ant-input-search-large ant-input-search-with-button ant-select-selection-search-input"
+            style={
+              Object {
+                "opacity": null,
+              }
+            }
+          >
+            <span
+              className="ant-input-wrapper ant-input-group"
+            >
+              <input
+                aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                aria-autocomplete="list"
+                aria-controls="rc_select_TEST_OR_SSR_list"
+                aria-haspopup="listbox"
+                aria-owns="rc_select_TEST_OR_SSR_list"
+                autoComplete="off"
+                className="ant-input ant-input-lg"
+                id="rc_select_TEST_OR_SSR"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onCompositionEnd={[Function]}
+                onCompositionStart={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onPaste={[Function]}
+                placeholder="Search Champions"
+                readOnly={false}
+                role="combobox"
+                style={null}
+                type="search"
+                unselectable={null}
+                value=""
+              />
+              <span
+                className="ant-input-group-addon"
+              >
+                <button
+                  className="ant-btn ant-btn-primary ant-btn-lg ant-input-search-button"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    aria-label="search"
+                    className="anticon anticon-search"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="search"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </span>
+          </span>
+        </span>
+        <span
+          className="ant-select-selection-placeholder"
+        />
+      </div>
+    </div>
+    <span
+      className="ant-badge"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="profile"
+        className="anticon anticon-profile"
+        data-testid="listIcon"
+        role="img"
+        style={
+          Object {
+            "fontSize": 30,
+          }
+        }
+      >
+        <svg
+          aria-hidden="true"
+          data-icon="profile"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM492 400h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zm0 144h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H492c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8zM340 368a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0zm0 144a40 40 0 1080 0 40 40 0 10-80 0z"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      aria-label="sort-ascending"
+      className="anticon anticon-sort-ascending ant-dropdown-trigger"
+      data-testid="sortIcon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="img"
+      style={
+        Object {
+          "fontSize": 30,
+        }
+      }
+    >
+      <svg
+        aria-hidden="true"
+        data-icon="sort-ascending"
+        fill="currentColor"
+        focusable="false"
+        height="1em"
+        viewBox="64 64 896 896"
+        width="1em"
+      >
+        <path
+          d="M839.6 433.8L749 150.5a9.24 9.24 0 00-8.9-6.5h-77.4c-4.1 0-7.6 2.6-8.9 6.5l-91.3 283.3c-.3.9-.5 1.9-.5 2.9 0 5.1 4.2 9.3 9.3 9.3h56.4c4.2 0 7.8-2.8 9-6.8l17.5-61.6h89l17.3 61.5c1.1 4 4.8 6.8 9 6.8h61.2c1 0 1.9-.1 2.8-.4 2.4-.8 4.3-2.4 5.5-4.6 1.1-2.2 1.3-4.7.6-7.1zM663.3 325.5l32.8-116.9h6.3l32.1 116.9h-71.2zm143.5 492.9H677.2v-.4l132.6-188.9c1.1-1.6 1.7-3.4 1.7-5.4v-36.4c0-5.1-4.2-9.3-9.3-9.3h-204c-5.1 0-9.3 4.2-9.3 9.3v43c0 5.1 4.2 9.3 9.3 9.3h122.6v.4L587.7 828.9a9.35 9.35 0 00-1.7 5.4v36.4c0 5.1 4.2 9.3 9.3 9.3h211.4c5.1 0 9.3-4.2 9.3-9.3v-43a9.2 9.2 0 00-9.2-9.3zM416 702h-76V172c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v530h-76c-6.7 0-10.5 7.8-6.3 13l112 141.9a8 8 0 0012.6 0l112-141.9c4.1-5.2.4-13-6.3-13z"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    className="sc-gtsrHT gWQSSh"
+  >
+    <div
+      className="ant-spin ant-spin-lg ant-spin-spinning ant-spin-show-text"
+    >
+      <span
+        className="ant-spin-dot ant-spin-dot-spin"
+      >
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+        <i
+          className="ant-spin-dot-item"
+        />
+      </span>
+      <div
+        className="ant-spin-text"
+      >
+        Loading Champions
+      </div>
+    </div>
+  </div>
+</div>
+`;

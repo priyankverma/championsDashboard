@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`watchList Component matches snapshot perfectly 1`] = `
+<div
+  className="sc-bdnxRM hclLhX"
+  height={768}
+>
+  <div
+    className="ant-page-header ant-page-header-ghost"
+  >
+    <div
+      className="ant-page-header-heading"
+    >
+      <div
+        className="ant-page-header-heading-left"
+      >
+        <div
+          className="ant-page-header-back"
+        >
+          <div
+            aria-label="Back"
+            className="ant-page-header-back-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            role="button"
+            style={
+              Object {
+                "background": "transparent",
+                "border": 0,
+                "display": "inline-block",
+                "lineHeight": "inherit",
+                "padding": 0,
+              }
+            }
+            tabIndex={0}
+          >
+            <span
+              aria-label="arrow-left"
+              className="anticon anticon-arrow-left"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="arrow-left"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 000 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <span
+          className="ant-page-header-heading-title"
+          title="Favourites"
+        >
+          Favourites
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="ant-empty"
+    data-testid="noDataView"
+  >
+    <div
+      className="ant-empty-image"
+      style={
+        Object {
+          "height": 60,
+        }
+      }
+    >
+      <img
+        alt="empty"
+        src="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+      />
+    </div>
+    <div
+      className="ant-empty-description"
+    >
+      <span>
+        No Favourites
+      </span>
+    </div>
+    <div
+      className="ant-empty-footer"
+    >
+      <button
+        className="ant-btn ant-btn-primary"
+        data-testid="addNowButton"
+        onClick={[Function]}
+        type="button"
+      >
+        <span>
+          Add Now
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
