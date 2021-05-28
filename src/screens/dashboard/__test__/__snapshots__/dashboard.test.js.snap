@@ -6,7 +6,7 @@ exports[`Dashboard Component matches snapshot perfectly 1`] = `
   height={768}
 >
   <div
-    className="sc-fujyAs ejTEhv"
+    className="sc-gKAaRy fkerGe"
   >
     <div
       className="ant-select ant-select-auto-complete sc-hKFxyN jMSORU ant-select-single ant-select-customize-input ant-select-show-search"

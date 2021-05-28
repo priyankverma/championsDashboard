@@ -1,13 +1,19 @@
+/**
+ * The watch list component, which shows the chapions added to the list by the user.
+ * User can see all the details of the user by tapping on the record, and has the option to remove the champion
+ * from the list.
+ * user canb see the details of the champion along with the image within this component.
+ */
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Avatar, Empty, Modal, List, Skeleton, Button, PageHeader } from "antd";
+import { Avatar, Empty, List, Skeleton, Button, PageHeader } from "antd";
 import { useHistory } from "react-router-dom";
-
-// import { , ContentWrap,  } from "./watchListStyles";
+import DetailModal from "./../../commonComponents/detailModal/detailModal";
 import { removeFromWatchList } from "../../redux/actions/watchListActions";
 import useWindowDimensions from "./../../commonComponents/customhooks/useWindowDimensions";
-import { ModalWrap, BoldName, Container } from "./../dashboard/dashboardStyles";
+import { Container } from "./../dashboard/dashboardStyles";
 export const WatchList = () => {
   const { height } = useWindowDimensions();
   const reducers = useSelector((state) => state);
@@ -79,56 +85,19 @@ export const WatchList = () => {
       )}
 
       {champDetail && (
-        <Modal
-          title={<BoldName>{champDetail.name}</BoldName>}
-          centered
-          visible={modal2Visible}
-          onOk={() => {
+        <DetailModal
+          champDetail={champDetail}
+          okFunction={() => {
             dispatch(removeFromWatchList(champDetail, true));
             setModal2Visible(false);
           }}
-          onCancel={() => {
+          cancelFunction={() => {
             setModal2Visible(false);
           }}
-          cancelText={"Close"}
           okText={"Remove from Fav."}
-        >
-          <ModalWrap>
-            <div>
-              <p>
-                Armor: <b>{champDetail.armor}</b>
-              </p>
-              <p>
-                Attack Damage: <b>{champDetail.attackdamage}</b>
-              </p>
-              <p>
-                Attack Range: <b>{champDetail.attackrange}</b>
-              </p>
-              <p>
-                HP: <b>{champDetail.hp}</b>
-              </p>
-              <p>
-                Moving Speed: <b>{champDetail.movespeed}</b>
-              </p>
-            </div>
-            <div>
-              <p>
-                Spell Block: <b>{champDetail.spellblock}</b>
-              </p>
-              <p>
-                HP Regen: <b>{champDetail.hpregen}</b>
-              </p>
-
-              <img
-                alt="ChampImage"
-                src={champDetail && champDetail.image_url}
-              />
-            </div>
-          </ModalWrap>
-          <p>
-            Versions: <b>{champDetail.videogame_versions.join(", ")}</b>
-          </p>
-        </Modal>
+          cancelText={"Close"}
+          visibleStatus={modal2Visible}
+        />
       )}
     </Container>
   );

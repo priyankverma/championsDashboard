@@ -1,6 +1,17 @@
+/**
+ * The main dashboard/landing screen, which shows the default listing of the champions, with an autocomplete search bar
+ * that allows the user to search the record with suggestions and tapping on any champion from the list displays it's details.
+ * The sorting function is also implemented, that is totally offline, and sorts the complete list of champions alphabettically in either order.
+ *
+ * Tapping on any of the list item, displays the details of the  champion, with the option to add that champion in the favourite list or remove
+ * from the same.
+ *
+ * The count of champions in the favourite list is also visible on the the top panel, list item. Tapping on which, takes the user to the Watch list page.
+ */
+
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Avatar, Spin, Modal, Input, Card, Badge, Menu, Dropdown } from "antd";
+import { Avatar, Spin, Input, Card, Badge, Menu, Dropdown } from "antd";
 import { useHistory } from "react-router-dom";
 import useWindowDimensions from "./../../commonComponents/customhooks/useWindowDimensions";
 import {
@@ -9,13 +20,11 @@ import {
   StyledAutoComplete,
   CardWrap,
   StyledList,
-  ModalWrap,
-  BoldName,
   AutoCompleteList,
   HeaderWrap,
   CardImage,
 } from "./dashboardStyles";
-
+import DetailModal from "../../commonComponents/detailModal/detailModal";
 import {
   getChampionsList,
   searchChampions,
@@ -228,57 +237,20 @@ export const Dashboard = (props) => {
       )}
 
       {champDetail && (
-        <Modal
-          title={<BoldName>{champDetail.name}</BoldName>}
-          centered
-          visible={modal2Visible}
-          onOk={() => {
+        <DetailModal
+          champDetail={champDetail}
+          okFunction={() => {
             dispatch(addToWatchList(champDetail));
             setModal2Visible(false);
           }}
-          onCancel={() => {
+          cancelFunction={() => {
             dispatch(removeFromWatchList(champDetail, true));
             setModal2Visible(false);
           }}
           okText={"Add to Fav."}
           cancelText={"Remove from Fav."}
-        >
-          <ModalWrap>
-            <div>
-              <p>
-                Armor: <b>{champDetail.armor}</b>
-              </p>
-              <p>
-                Attack Damage: <b>{champDetail.attackdamage}</b>
-              </p>
-              <p>
-                Attack Range: <b>{champDetail.attackrange}</b>
-              </p>
-              <p>
-                HP: <b>{champDetail.hp}</b>
-              </p>
-              <p>
-                Moving Speed: <b>{champDetail.movespeed}</b>
-              </p>
-            </div>
-            <div>
-              <p>
-                Spell Block: <b>{champDetail.spellblock}</b>
-              </p>
-              <p>
-                HP Regen: <b>{champDetail.hpregen}</b>
-              </p>
-
-              <img
-                alt="ChampImage"
-                src={champDetail && champDetail.image_url}
-              />
-            </div>
-          </ModalWrap>
-          <p>
-            Versions: <b>{champDetail.videogame_versions.join(", ")}</b>
-          </p>
-        </Modal>
+          visibleStatus={modal2Visible}
+        />
       )}
     </Container>
   );
