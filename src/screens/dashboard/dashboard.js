@@ -230,12 +230,20 @@ export const Dashboard = (props) => {
                 }
                 actions={[
                   <AppstoreAddOutlined
-                    onClick={() => dispatch(addToWatchList(item))}
+                    style={{ color: item.addedToWatchList ? "blue" : "grey" }}
+                    onClick={() => {
+                      item.addedToWatchList = true;
+                      dispatch(addToWatchList(item));
+                    }}
                     key="addToWatchList"
                   />,
 
                   <DeleteOutlined
-                    onClick={() => dispatch(removeFromWatchList(item))}
+                    style={{ color: item.addedToWatchList ? "red" : "grey" }}
+                    onClick={() => {
+                      item.addedToWatchList = false;
+                      dispatch(removeFromWatchList(item));
+                    }}
                     key="removeFromWatchList"
                   />,
                 ]}
