@@ -50,6 +50,7 @@ export const Dashboard = (props) => {
   const [modal2Visible, setModal2Visible] = useState(false);
   const [champDetail, setChampDetail] = useState(null);
   const [sortLoader, setSortLoader] = useState(false);
+  const [current, setCurrent] = useState(null);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -93,40 +94,59 @@ export const Dashboard = (props) => {
     value && value !== "" ? dispatch(searchChampions(value)) : null;
     setQuery(value);
   };
+  const handleClick = (e) => {
+    console.log("click ", e);
+    setCurrent(e.key);
+    if (e.key === "ascending") {
+      championsList.sort((a, b) =>
+        a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+      );
+      setSortLoader(true);
+      setTimeout(() => {
+        setSortLoader(false);
+      }, 400);
+    } else if (e.key === "descending") {
+      championsList.sort((a, b) =>
+        a.name > b.name ? -1 : b.name > a.name ? 1 : 0
+      );
+      setSortLoader(true);
+      setTimeout(() => {
+        setSortLoader(false);
+      }, 400);
+    } else if (e.key === "attackDescending") {
+      championsList.sort((a, b) =>
+        a.attackdamage > b.attackdamage
+          ? -1
+          : b.attackdamage > a.attackdamage
+          ? 1
+          : 0
+      );
+      setSortLoader(true);
+      setTimeout(() => {
+        setSortLoader(false);
+      }, 400);
+    } else if (e.key === "attackAscending") {
+      championsList.sort((a, b) =>
+        a.attackdamage > b.attackdamage
+          ? 1
+          : b.attackdamage > a.attackdamage
+          ? -1
+          : 0
+      );
+      setSortLoader(true);
+      setTimeout(() => {
+        setSortLoader(false);
+      }, 400);
+    }
+  };
 
   const menu = (
-    <Menu>
+    <Menu onClick={handleClick} selectedKeys={[current]}>
       <Menu.ItemGroup title="Sort Items">
-        <Menu.Item>
-          <div
-            onClick={() => {
-              championsList.sort((a, b) =>
-                a.name > b.name ? 1 : b.name > a.name ? -1 : 0
-              );
-              setSortLoader(true);
-              setTimeout(() => {
-                setSortLoader(false);
-              }, 400);
-            }}
-          >
-            A to Z
-          </div>
-        </Menu.Item>
-        <Menu.Item>
-          <div
-            onClick={() => {
-              championsList.sort((a, b) =>
-                a.name > b.name ? -1 : b.name > a.name ? 1 : 0
-              );
-              setSortLoader(true);
-              setTimeout(() => {
-                setSortLoader(false);
-              }, 400);
-            }}
-          >
-            Z to A
-          </div>
-        </Menu.Item>
+        <Menu.Item key="ascending">A to Z</Menu.Item>
+        <Menu.Item key="descending">Z to A</Menu.Item>
+        <Menu.Item key="attackDescending">More Attack Damage first</Menu.Item>
+        <Menu.Item key="attackAscending">Less Attack Damage first</Menu.Item>
 
         <Menu.Item>
           <div>Close</div>
