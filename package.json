@@ -32,7 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "runServer": "node server.js",
-    "dev": "concurrently --kill-others \"build\" \"runServer\""
+    "dev": "concurrently --kill-others \"npm run build\" \"runServer\""
   },
   "eslintConfig": {
     "extends": [
