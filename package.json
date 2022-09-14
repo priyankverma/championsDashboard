@@ -8,7 +8,6 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.15.4",
-    "concurrently": "^7.4.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "fuse.js": "^6.4.6",
@@ -32,7 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "runServer": "node server.js",
-    "dev": "concurrently --kill-others \"build\" \"runServer\""
+    "server": "npm run build && npm run runServer "
   },
   "eslintConfig": {
     "extends": [
