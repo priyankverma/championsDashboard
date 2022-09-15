@@ -12,7 +12,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
 app.get("/", (req, res) => {
-  const filePath = path.resolve(__dirname, "../build/", "index.html");
+  const filePath = path.resolve(__dirname, "../public/", "index.html");
   // res.set('Access-Control-Allow-Origin', 'http://localhost:5000/');
   // res.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS'); 
   fs.readFile(filePath, "utf8", (err, data) => {
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  const filePath = path.resolve(__dirname, "../build/", "index.html");
+  const filePath = path.resolve(__dirname, "../public/", "index.html");
   // res.set('Access-Control-Allow-Origin', 'http://localhost:5000/');
   // res.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
 
@@ -51,7 +51,7 @@ app.get("/about", (req, res) => {
 app.get("/articles/:id", async (req, res) => {
   try {
   let champID = req.params.id
-  const filePath = path.resolve(__dirname, "../build/", "index.html");
+  const filePath = path.resolve(__dirname, "../public/", "index.html");
   await fs.readFile(filePath, "utf8",  async (err, nodeData) => {
     if (err) {
       return console.log(err);
