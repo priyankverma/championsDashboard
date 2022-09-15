@@ -1,30 +1,26 @@
-import "./App.css";
-import React from "react";
-import { createStore, applyMiddleware, compose } from "redux";
-import { Provider } from "react-redux";
-import combinedReducer from "./../src/redux/combinedReducers";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Dashboard } from "../src/screens/dashboard/dashboard";
-import { WatchList } from "../src/screens/watchList/watchList";
-const ReduxThunk = require("redux-thunk").default;
-
-let composeEnhancer = compose;
-export const store = createStore(
-  //creates an instance of store to be used globally
-  combinedReducer, // pass in the combined reducers
-  composeEnhancer(applyMiddleware(ReduxThunk)) // use the middleware for async actions
-);
-export default function App(props) {
+function App() {
   return (
-    <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/watchlist" component={WatchList} />
-          <Route path="/article/:id" component={Dashboard} />
-        </Switch>
-      </Router>
-    </Provider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React her aszkdha sd 
+        </a>
+      </header>
+    </div>
   );
 }
+
+export default App;
