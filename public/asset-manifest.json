@@ -1,26 +1,25 @@
 {
   "files": {
     "main.css": "/static/css/main.c72f7a9a.chunk.css",
-    "main.js": "/static/js/main.1b916a03.chunk.js",
-    "main.js.map": "/static/js/main.1b916a03.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5be4a301.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5be4a301.js.map",
+    "main.js": "/static/js/main.dbbcfae8.chunk.js",
+    "main.js.map": "/static/js/main.dbbcfae8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ce5f487a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ce5f487a.js.map",
     "static/css/2.92c2f793.chunk.css": "/static/css/2.92c2f793.chunk.css",
-    "static/js/2.bcf9c409.chunk.js": "/static/js/2.bcf9c409.chunk.js",
-    "static/js/2.bcf9c409.chunk.js.map": "/static/js/2.bcf9c409.chunk.js.map",
-    "static/js/3.ccb735e6.chunk.js": "/static/js/3.ccb735e6.chunk.js",
-    "static/js/3.ccb735e6.chunk.js.map": "/static/js/3.ccb735e6.chunk.js.map",
+    "static/js/2.4ac004dd.chunk.js": "/static/js/2.4ac004dd.chunk.js",
+    "static/js/2.4ac004dd.chunk.js.map": "/static/js/2.4ac004dd.chunk.js.map",
+    "static/js/3.7f6494bf.chunk.js": "/static/js/3.7f6494bf.chunk.js",
+    "static/js/3.7f6494bf.chunk.js.map": "/static/js/3.7f6494bf.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.92c2f793.chunk.css.map": "/static/css/2.92c2f793.chunk.css.map",
     "static/css/main.c72f7a9a.chunk.css.map": "/static/css/main.c72f7a9a.chunk.css.map",
-    "static/js/2.bcf9c409.chunk.js.LICENSE.txt": "/static/js/2.bcf9c409.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+    "static/js/2.4ac004dd.chunk.js.LICENSE.txt": "/static/js/2.4ac004dd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5be4a301.js",
+    "static/js/runtime-main.ce5f487a.js",
     "static/css/2.92c2f793.chunk.css",
-    "static/js/2.bcf9c409.chunk.js",
+    "static/js/2.4ac004dd.chunk.js",
     "static/css/main.c72f7a9a.chunk.css",
-    "static/js/main.1b916a03.chunk.js"
+    "static/js/main.dbbcfae8.chunk.js"
   ]
 }
