@@ -13,8 +13,6 @@ app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
 app.get("/", (req, res) => {
   const filePath = path.resolve(__dirname, "../public/", "index.html");
-  // res.set('Access-Control-Allow-Origin', 'http://localhost:5000/');
-  // res.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS'); 
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       return console.log(err);
