@@ -74,8 +74,8 @@ app.get("/articles/:id", async (req, res) => {
         console.error(error);
       });
      nodeData = await nodeData
-      .replace(/__TITLE__/g, "THIS IS DYNAMIC TITLE")
-      .replace(/__DESCRIPTION__/g, "DESCRIPTION")
+      .replace(/__TITLE__/g, `THIS IS DYNAMIC TITLE FOR ${tempVariable.data.name}`)
+      .replace(/__DESCRIPTION__/g, `THIS IS DYNAMIC DESCRIPTION FOR ${tempVariable.data.name}`)
       .replace(/__IMAGE__/g, tempVariable.data.big_image_url)
       res.writeHeader(200, {"Content-Type": "text/html"});
       res.write(nodeData);   
