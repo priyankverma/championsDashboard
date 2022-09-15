@@ -5,9 +5,10 @@ const fs = require("fs");
 const PORT = process.env.PORT || 5000; 
 
 const app = express();
-
+app.use(express.static(path.join(__dirname, "..", "build")));
+app.use(express.static("public"));
 app.get("/", (req, res) => {
-  const filePath = path.resolve(__dirname, "./build", "index.html");
+  const filePath = path.resolve(__dirname, "../public/", "index.html");
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       return console.log(err);
@@ -22,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  const filePath = path.resolve(__dirname, "./build", "index.html");
+  const filePath = path.resolve(__dirname, "../public/", "index.html");
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       return console.log(err);
@@ -37,7 +38,9 @@ app.get("/about", (req, res) => {
   });
 });
 
-app.use(express.static(path.resolve(__dirname, "./build")))
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)
