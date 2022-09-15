@@ -28,6 +28,7 @@ import DetailModal from "../../commonComponents/detailModal/detailModal";
 import {
   getChampionsList,
   searchChampions,
+  getChampionsListContent
 } from "./../../redux/actions/listingAction";
 import {
   addToWatchList,

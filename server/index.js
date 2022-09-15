@@ -1,14 +1,20 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+var axios = require('axios');
 
-const PORT = process.env.PORT || 5000; 
+
+
+
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
 app.get("/", (req, res) => {
-  const filePath = path.resolve(__dirname, "../public/", "index.html");
+  const filePath = path.resolve(__dirname, "../build/", "index.html");
+  // res.set('Access-Control-Allow-Origin', 'http://localhost:5000/');
+  // res.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS'); 
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       return console.log(err);
@@ -23,7 +29,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  const filePath = path.resolve(__dirname, "../public/", "index.html");
+  const filePath = path.resolve(__dirname, "../build/", "index.html");
+  // res.set('Access-Control-Allow-Origin', 'http://localhost:5000/');
+  // res.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       return console.log(err);
@@ -36,6 +45,48 @@ app.get("/about", (req, res) => {
 
     res.send(data)
   });
+});
+
+
+app.get("/articles/:id", async (req, res) => {
+  try {
+  let champID = req.params.id
+  const filePath = path.resolve(__dirname, "../build/", "index.html");
+  await fs.readFile(filePath, "utf8",  async (err, nodeData) => {
+    if (err) {
+      return console.log(err);
+    }
+
+    const options = {
+      method: 'GET',
+      url: 'https://api.pandascore.co/lol/champions/' + champID,
+      headers: {
+        authorization: 'Bearer MG5rGXMszfU8_6lW92ntbVTClkGkUXn9CIzP5TC_Amp-xNkrXxY'
+      }
+    };
+    
+    let tempVariable = await axios
+      .request(options)
+      .then(function (response) {
+
+        return response
+      })
+      .catch(function (error) {
+        console.log('error', error)
+        console.error(error);
+      });
+     nodeData = await nodeData
+      .replace(/__TITLE__/g, "THIS IS DYNAMIC TITLE")
+      .replace(/__DESCRIPTION__/g, "DESCRIPTION")
+      .replace(/__IMAGE__/g, tempVariable.data.big_image_url)
+      res.writeHeader(200, {"Content-Type": "text/html"});
+      res.write(nodeData);   
+      //  res.send(nodeData)
+
+  });
+} catch (err) {
+  res.status(500).json({ message: err });
+}
 });
 
 app.use((req, res, next) => {

@@ -1,5 +1,6 @@
 import { types } from "../actionTypes/actionTypes";
 import { apiToken, SERVER_URL, _get } from "../../utils/constants";
+import axios from 'axios';
 
 export const getChampionsList = () => {
   return (dispatch) => {
