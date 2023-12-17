@@ -3,6 +3,7 @@ export const apiToken =
 export const SERVER_URL = "https://api.pandascore.co/lol/champions?"; //  the server URL for the API
 const log = true;
 
+
 /**
  *
  * @param {*} e - the error event object returned
